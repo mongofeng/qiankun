@@ -1,0 +1,65 @@
+{
+  "name": "vite",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "commit": "git-cz",
+    "code": "node code-genrator/main.js",
+    "prepare": "husky install",
+    "format": "prettier --write ./**/*.{vue,ts,tsx,js,jsx,css,less,scss,json,md}",
+    "lint-css": "stylelint src/**/*.{css,less,scss,vue} --custom-syntax postcss-html --fix",
+    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx --fix"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.9.1",
+    "axios": "^0.24.0",
+    "eslint-plugin-vue": "^8.3.0",
+    "vue": "^3.2.25",
+    "vue-router": "^4.0.12",
+    "vuex": "^4.0.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.0.2",
+    "@commitlint/config-conventional": "^16.0.0",
+    "@commitlint/cz-commitlint": "^16.0.0",
+    "@typescript-eslint/parser": "^5.9.1",
+    "@vitejs/plugin-vue": "^2.0.0",
+    "commitizen": "^4.2.4",
+    "eslint": "^8.6.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.7",
+    "prettier": "^2.5.1",
+    "sass": "^1.48.0",
+    "stylelint": "^14.2.0",
+    "stylelint-config-css-modules": "^2.3.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^24.0.0",
+    "stylelint-declaration-block-no-ignored-properties": "^2.5.0",
+    "stylelint-no-unsupported-browser-features": "^5.0.2",
+    "stylelint-scss": "^4.1.0",
+    "typescript": "^4.4.4",
+    "vite": "^2.7.2",
+    "vite-plugin-qiankun": "^1.0.11",
+    "vue-tsc": "^0.29.8"
+  },
+  "lint-staged": {
+    "*.{js,vue,ts,jsx,tsx}": [
+      "prettier --write",
+      "eslint --fix",
+      "stylelint --custom-syntax postcss-html  --fix"
+    ],
+    "*.{html,css,less,scss,md}": [
+      "prettier --write"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
+  }
+}
